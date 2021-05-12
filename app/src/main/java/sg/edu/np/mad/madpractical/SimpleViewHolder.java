@@ -13,7 +13,7 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
         txt = itemView.findViewById(R.id.textView);
         txtx = itemView.findViewById(R.id.textView3);
-        imgview = itemView.findViewById(R.id.imageView3);
+        imgview = itemView.findViewById(R.id.img_profile);
         bigImg = itemView.findViewById(R.id.bigImg);
     }
 
