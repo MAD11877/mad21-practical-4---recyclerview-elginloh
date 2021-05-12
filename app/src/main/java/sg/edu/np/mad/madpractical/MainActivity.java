@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         TextView DisplayName = (TextView) findViewById(R.id.displayName);
         DisplayName.setText(name);
         DisplayDesc.setText(desc);
-        Button button = (Button) findViewById(R.id.btnFollow);
+        Button button = findViewById(R.id.btnFollow);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
