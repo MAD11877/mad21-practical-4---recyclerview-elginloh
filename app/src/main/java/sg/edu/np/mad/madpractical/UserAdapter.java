@@ -48,8 +48,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
                   public void onClick(DialogInterface dialogInterface, int i) {
 
                     Bundle mBundle = new Bundle();
-                    mBundle.putString("name", listObjects.getName());
-                    mBundle.putString("desc", listObjects.getDescription());
+                    mBundle.putInt("id", position);
                     Intent wassup = new Intent(holder.imgview.getContext(), MainActivity.class);
                     wassup.putExtras(mBundle);
                     holder.imgview.getContext().startActivity(wassup);

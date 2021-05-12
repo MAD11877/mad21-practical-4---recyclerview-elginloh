@@ -17,23 +17,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent wassup = getIntent();
-        String name = wassup.getStringExtra("name");
-        String desc = wassup.getStringExtra("desc");
+        int id = getIntent().getIntExtra("id",0);
+        User currentUser = ListActivity.UserInfoList.get(id);
         TextView DisplayDesc = (TextView) findViewById((R.id.displayDesc));
         TextView DisplayName = (TextView) findViewById(R.id.displayName);
-        DisplayName.setText(name);
-        DisplayDesc.setText(desc);
+        DisplayName.setText(currentUser.name);
+        DisplayDesc.setText(currentUser.description);
         Button button = findViewById(R.id.btnFollow);
+        if(currentUser.followed == false)
+        {
+            button.setText("Follow");
+        }
+        else
+        {
+            button.setText("Unfollow");
+        }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (user.followed == false) {
-                    user.setFollowed(true);
+                if (currentUser.followed == false) {
+                    currentUser.followed = true;
                     button.setText("Unfollow");
                     Toast.makeText(getApplicationContext(), "Followed", Toast.LENGTH_LONG).show();
                 } else {
-                    user.setFollowed(false);
+                    currentUser.followed = false;
                     button.setText("Follow");
                     Toast.makeText(getApplicationContext(), "Unfollowed", Toast.LENGTH_LONG).show();
                 }
