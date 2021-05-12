@@ -1,7 +1,6 @@
 package sg.edu.np.mad.madpractical;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,24 +10,21 @@ import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.security.AccessController;
 import java.util.ArrayList;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
-public class SimpleAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
+public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     ArrayList<User> data;
 
-    public SimpleAdapter(ArrayList<User> input){
+    public UserAdapter(ArrayList<User> input){
         data = input;
     }
 
-    public SimpleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.simplerecyclerview,parent, false);
-        return new SimpleViewHolder(item);
+    public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.user,parent, false);
+        return new UserViewHolder(item);
     }
 
-    public void onBindViewHolder(SimpleViewHolder holder, int position){
+    public void onBindViewHolder(UserViewHolder holder, int position){
         User listObjects = data.get(position);
         holder.txt.setText(listObjects.getName());
         holder.txtx.setText(listObjects.getDescription());

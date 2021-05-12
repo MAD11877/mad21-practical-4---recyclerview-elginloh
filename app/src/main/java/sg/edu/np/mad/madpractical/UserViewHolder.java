@@ -6,10 +6,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class SimpleViewHolder extends RecyclerView.ViewHolder{
+public class UserViewHolder extends RecyclerView.ViewHolder{
     TextView txt, txtx;
     ImageView imgview, bigImg;
-    public SimpleViewHolder(View itemView){
+    public UserViewHolder(View itemView){
         super(itemView);
         txt = itemView.findViewById(R.id.textView);
         txtx = itemView.findViewById(R.id.textView3);
