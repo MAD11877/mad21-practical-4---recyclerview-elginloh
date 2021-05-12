@@ -37,7 +37,7 @@ public class ListActivity extends AppCompatActivity {
 //                alert.show();
 //            }
 //        });
-        for(int i = 0; i < 19; i ++){
+        for(int i = 0; i < 20; i ++){
             int r = new Random().nextInt();
             int z = new Random().nextInt();
             boolean bool = true;
